@@ -1,5 +1,3 @@
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:573882424.
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:1495636491.
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 

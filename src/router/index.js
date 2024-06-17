@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../store/AuthStore'
 
 const routes = [
+  /* AUTHENTICATION */
   {
     path: '/login',
     name: 'Login',
@@ -10,6 +11,8 @@ const routes = [
       requiredAuth: false
     }
   },
+
+  /* VISTA PRINCIPAL */
   {
     path: '/',
     name: 'home',
@@ -18,10 +21,21 @@ const routes = [
       requiredAuth: true
     }
   },
+
+  /* CRUD */
   {
-    path: '/posts/:id',
-    name: 'PostDetails',
-    component: () => import('@/views/PostDetails.vue'),
+    path: '/customers',
+    name: 'customers',
+    component: () => import('@/views/CustomerViews/CustomerTable.vue'),
+    meta: {
+      requiredAuth: true
+    }
+  },
+
+  {
+    path: '/providers',
+    name: 'providers',
+    component: () => import('@/views/ProviderViews/ProviderTable.vue'),
     meta: {
       requiredAuth: true
     }

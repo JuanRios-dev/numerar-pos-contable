@@ -1,6 +1,6 @@
 <template>
     <MainLayout>
-        <h1>Home Principal - {{ token }}</h1>
+        <h1>Bienvenido {{ user.nombre }}</h1>
     </MainLayout>
 </template>
 
@@ -15,10 +15,10 @@ export default defineComponent({
         MainLayout
     },
     setup() {
-        const token = useAuthStore().getToken
+        const user = useAuthStore().getUser
 
         return {
-            token
+            user
         };
     }
 });
@@ -27,5 +27,6 @@ export default defineComponent({
 <style scoped lang="scss">
 h1 {
     color: $primary-color;
+    margin: 0;
 }
 </style>

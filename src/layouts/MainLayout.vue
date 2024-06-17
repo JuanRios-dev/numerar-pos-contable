@@ -3,7 +3,7 @@
     <header class="main-header">
       <div class="top-bar">
         <div class="logo">
-          <h1>NUMERAR</h1>
+          <h1>Numerar</h1>
         </div>
         <div class="option">
           <div class="select-wrapper">
@@ -25,10 +25,10 @@
     </header>
     <nav class="nav-bar">
       <ul class="menu">
-        <a href="#">
+        <router-link :to="{ name: 'home' }">
           <v-icon name="co-home" class="icon" />
           Inicio
-        </a>
+        </router-link>
         <a href="#">
           <v-icon name="gi-shopping-cart" class="icon" />
           Vender
@@ -37,8 +37,8 @@
           <v-icon name="ri-contacts-book-line" class="icon" />
           Terceros
           <ul class="submenu">
-            <li><a href="#">Clientes</a></li>
-            <li><a href="#">Proveedores</a></li>
+            <li><router-link :to="{ name: 'customers' }">Clientes</router-link></li>
+            <li><router-link :to="{ name: 'providers' }" href="#">Proveedores</router-link></li>
           </ul>
         </a>
         <a href="#" class="has-submenu">
@@ -229,7 +229,6 @@ export default defineComponent({
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: start;
       margin: 0;
 
       a {
@@ -303,15 +302,16 @@ export default defineComponent({
   }
 
   .main {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 130px;
 
     .content {
-      padding: 0 2rem;
-      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: $white;
+      border-radius: 10px;
+      margin: 20px;
+      padding: 20px;
     }
   }
 
