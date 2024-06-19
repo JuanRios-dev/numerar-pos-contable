@@ -10,7 +10,7 @@
 import { defineComponent, onMounted, ref } from 'vue'
 import MainLayout from '@/layouts/MainLayout.vue'
 import TableData from '@/components/TableData.vue'
-import ProviderService from '@/services/ProviderService'
+import ProviderService from '@/services/providerService'
 
 export default defineComponent({
     name: 'ProviderTable',
